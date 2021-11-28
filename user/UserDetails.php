@@ -20,7 +20,7 @@ $user_data = mysqli_fetch_assoc($result);
 
 if(isset($_POST['submit'])) {
     $user_id = $_SESSION['user_id'];
-    $user_learner = mysqli_real_escape_string($conn, $_POST['user_learner']) ?? null;
+    //$user_learner = mysqli_real_escape_string($conn, $_POST['user_learner']);
     $user_name_2 = mysqli_real_escape_string($conn, $_POST['user_name_2']);
     $user_nric = mysqli_real_escape_string($conn, $_POST['user_nric']);
     $user_dob = mysqli_real_escape_string($conn, $_POST['user_dob']);
@@ -28,8 +28,8 @@ if(isset($_POST['submit'])) {
     $user_gender = mysqli_real_escape_string($conn, $_POST['user_gender']);
     $user_phonenum = mysqli_real_escape_string($conn, $_POST['user_phonenum']);
     $user_email = mysqli_real_escape_string($conn, $_POST['user_email']);
-    $tnc1 = mysqli_real_escape_string($conn, $_POST['tnc1'])?? null;
-    $tnc2 = mysqli_real_escape_string($conn, $_POST['tnc2'])?? null;
+    //$tnc1 = mysqli_real_escape_string($conn, $_POST['tnc1']);
+    //$tnc2 = mysqli_real_escape_string($conn, $_POST['tnc2']);
 
     //check learner
     if(empty($_POST['user_learner'])) {
@@ -115,7 +115,7 @@ if(isset($_POST['submit'])) {
 
         $sql = "UPDATE `user` SET `user_learner` = '$user_learner', `user_name_2` = '$user_name_2', `user_nric` = '$user_nric', `user_dob` = '$user_dob', `user_location` = '$user_location', `user_gender` = '$user_gender', `user_phonenum` = '$user_phonenum', `user_email` = '$user_email', `tnc1` = '$tnc1', `tnc2` = '$tnc2' WHERE `user` . `user_id` = '$user_id'";
  
-        //echo $sql;
+        echo $sql;
         //, 'tnc1' = '$tnc1', 'tnc2' = '$tnc2' 
 
         $result = mysqli_query($conn, $sql);
@@ -150,7 +150,7 @@ if(isset($_POST['submit'])) {
                         <li><a href="Homepage.php" data-after="Home">Home</a></li>
                         <li><a href="Aboutus.php" data-after="About Us">About Us</a></li>
                         <li><a href="Services.php" data-after="Services">Services</a></li>
-                        <li><a href="Details.php" data-after="Booking">Booking</a></li>
+                        <li><a href="userDetails.php" data-after="Booking">Booking</a></li>
                         <li><a href="Contactus.php" data-after="Contact Us">Contact Us</a></li>
                         <li><a href="Profile.php" data-after="Profile">Profile</a></li>
                         <li><a href="logout.php" data-after="Logut">Logout</a></li>

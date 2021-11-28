@@ -97,7 +97,7 @@ include("header.php")
         </div>
         </div>
         <div class="booking-btn">
-        <a href="UserDetails.php" type="button" class="button">Book Now</a>
+        <a href="usersignup.php" type="button" class="button">Book Now</a>
         </div>
     </section>
 

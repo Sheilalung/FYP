@@ -100,7 +100,7 @@ if(isset($_POST['submit'])) {
                         <li><a href="Homepage.php" data-after="Home">Home</a></li>
                         <li><a href="Aboutus.php" data-after="About Us">About Us</a></li>
                         <li><a href="Services.php" data-after="Services">Services</a></li>
-                        <li><a href="Details.php" data-after="Booking">Booking</a></li>
+                        <li><a href="userDetails.php" data-after="Booking">Booking</a></li>
                         <li><a href="Contactus.php" data-after="Contact Us">Contact Us</a></li>
                         <li><a href="Profile.php" data-after="Profile">Profile</a></li>
                         <li><a href="logout.php" data-after="Logut">Logout</a></li>
