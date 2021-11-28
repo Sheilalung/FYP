@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: rgb(250, 82, 52);
+    --white: white;
+    --grey: rgb(110, 107, 107);
+    --black: black;
+    --grey2: rgb(236, 229, 229);
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.nav {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--black);
+    border-left: 10px solid var(--black);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.nav.active {
+    width: 80px;
+}
+
+.brand img {
+    width: 265px;
+    height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.nav ul {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    width: 100%;
+}
+
+.nav ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.nav ul li:hover,
+.nav ul li.hovered {
+    background: var(--white);
+}
+
+.nav ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.nav ul li:hover a,
+.nav ul li.hovered a {
+    color: var(--orange);
+}
+
+.nav ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+
+.nav ul li a .icon i {
+    font-size: 1.8rem;
+}
+
+.nav ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+/*Curve at right outside*/
+.nav ul li:hover a::before,
+.nav ul li.hovered a::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+.nav ul li:hover a::after,
+.nav ul li.hovered a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+/*End curve at right outside*/
+
+/*main*/
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+}
+
+.main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.search {
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label {
+    position: relative;
+    width: 100%;
+}
+
+.search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 40px;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+.search label i {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.5rem;
+}
+
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.user img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*End main*/
+
+
+/*admin info*/
+.admin {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    margin-top: 5px;
+}
+
+.admin .admininfo {
+    position: relative;
+    display: grid;
+    /*min-height: 500px;*/
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 10px 20px #888888;
+    border-radius: 20px;
+}
+
+.cardtitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardtitle h2 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: var(--orange);
+}
+
+.btn {
+    position: relative;
+    padding: 10px 10px;
+    background: var(--black);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn:hover {
+    color: var(--orange);
+}
+
+.admin table {
+    width: 100%;
+    border-collapse: collapse;
+	text-align: center;
+	background-color: var(--grey2);
+	color: white;
+    margin-top: 10px;
+}
+
+.admin .admininfo table tr {
+    color: var(--black);
+    border: 1px solid #ccc;
+}
+
+.admin .admininfo tr:hover {
+    color: var(--orange);
+    background-color: var(--grey2);
+    margin: 0;
+}
+
+.admin .admininfo td:hover {
+    background-color:var(--grey);
+    margin: 0;
+}
+
+.admininfo .placebtn {
+    justify-content: center;
+    text-align: center;
+}
+
+.admininfo .button {
+    display: inline-block;
+    padding: 10px 30px;
+    color: tomato;
+    background-color: transparent;
+    border: 2px solid tomato;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    margin-top: 20px;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+}
+
+.admininfo .button:hover {
+    color: white;
+    background-color: tomato;
+}
+
+/*Media Query Section*/
+@media (max-width: 900px) {
+    .nav {
+        left: -300px;
+    }
+
+    .nav.active {
+        left: 0;
+        width: 300px;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        left: 300px;
+    }
+
+    .cardbox {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 760px) {
+    .admin {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .admininfo {
+        overflow-x: auto;
+    }
+}

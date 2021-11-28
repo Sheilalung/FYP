@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*Screen section */
+.screen {
+    background-image: url(../user/image/landscape.jpg);
+    background-image: cover;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+.screen::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.box {
+    width: 380px;
+    height: 500px;
+    position: relative;
+    margin: 6% auto;
+    background-color: rgb(236, 229, 229);
+    padding: 5px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.click-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0px 0px 5px 5px rgb(236, 158, 145);
+    border-radius: 40px;
+    text-align: center;
+    align-items: center;
+}
+
+.toggle-button {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, tomato, gold);
+    border-radius: 30px;
+    transition: 0.5s ease;
+}
+
+.input-field {
+    top: 150px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s ease;
+    left: 50px;
+}
+
+.name {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px;
+    border: 0;
+    border-bottom: 1px solid rgb(236, 158, 145);
+    outline: none;
+    background: transparent;
+}
+
+.check-box {
+    margin: 30px 10px 30px 0;
+}
+
+span p {
+    color: tomato;
+    bottom: 65px;
+    font-size: 0.9rem;
+    position: absolute;
+    width: 200px;
+}
+
+span {
+    color: tomato;
+    bottom: 63px;
+    font-size: 0.9rem;
+    position: absolute;
+}
+
+button {
+    cursor: pointer;
+}
+
+.submit-button {
+    width: 85%;
+    padding: 10px 30px;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, tomato,gold);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.submit-button:hover {
+    box-shadow: 0px 0px 2px 2px rgb(133, 131, 131);
+}
+
+#user span p {
+    color: tomato;
+    font-size: 0.9rem;
+    position: absolute;
+    width: 200px;
+    top: -149px;
+}
+
+.add {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link {
+    margin: 20px;
+}
+
+a {
+    color: black;
+    font-size: 0.8rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#user .link span {
+    margin-left: -30px;
+    top: 19.5rem;
+}
+
+#user .link span:hover {
+    text-decoration: underline;
+    color: tomato;
+}
+
+#user p {
+    color: black;
+    font-size: 0.8rem;
+}
+
+#user span {
+    color: black;
+    font-size: 0.8rem;
+}
+
+#user .box-bottom {
+    margin-top: 40px;
+}
+
+#user {
+    left: 50px;
+}
+
+#admin {
+    left: 450px;
+}
+
+/*End Screen Section*/
+
+/*reset password section*/
+#reset .img-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#reset .img-container .img-crop {
+    margin-top: 25px;
+    width: 80%;
+    overflow: hidden;
+    border-radius: 15%;
+}
+
+#reset .input-field {
+    top: 220px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s ease;
+    left: 50px;
+}
+
+#reset .submit-button {
+    margin-top: 30px;
+}
+
+#reset .errors {
+	color: rgb(255, 89, 89);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+/*End rest password section*/
+
+/*Signup section*/
+#usersignup h1 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+#usersignup .input-field {
+    top: 70px;
+    position: absolute;
+    width: 280px;
+    transition: 0.5s ease;
+    left: 50px;
+    margin-bottom: 5px;
+}
+
+#usersignup .submit-button {
+    margin-top: 20px;
+}
+
+#usersignup .name {
+    margin-top: 10px;
+}
+
+#usersignup .name:hover {
+    border-bottom: 2px solid black;
+    transition: 0.5s ease;
+}
+
+#usersignup .errors {
+	color: rgb(255, 89, 89);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 2px;
+}
+/*End Signup section*/

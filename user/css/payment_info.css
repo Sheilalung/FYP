@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*Header Section*/
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%; /* */
+    height: auto;
+}
+
+#header .header {
+    min-height: 0vh;
+    background-color: black  ;
+}
+
+#header .brand img {
+    width: 265px;
+    height: 65px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+#header .header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: black;
+    width: 100%; /* */
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.6s ease left;
+}
+
+#header .nav-list ul.active {
+    left: 0;
+}
+
+#header .nav-list ul a {
+    font-size: 2.3rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    padding: 20px;
+    display: block;
+}
+
+#header .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(255, 99, 71, 0.226);
+    font-size: 10rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: 0.3s ease letter-spacing;
+    text-align: center;
+}
+
+#header .nav-list ul li:hover a::after {
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+#header .nav-list ul li:hover a {
+    color: tomato;
+}
+
+#header .hamburger {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: scale(0.8);
+    margin-right: 10px;
+    z-index: 100;
+}
+
+#header .hamburger .bar {
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: 0.3s ease;
+    transition-property: top, bottom;
+}
+
+#header .hamburger .bar::after {
+    top: 8px;
+}
+
+#header .hamburger .bar::before {
+    bottom: 8px;
+}
+
+#header .hamburger.active .bar::before {
+    bottom: 0;
+}
+
+#header .hamburger.active .bar::after {
+    top: 0;
+}
+/*End Header Section*/
+
+/*Payment Section*/
+#payment {
+    margin-top: 100px;
+}
+
+#payment-content .container1 {
+    display: flex;
+    width: 100%;
+}
+
+#payment h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+#payment .icon {
+    display: flex;
+    margin-top: 30px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+#payment .text {
+    width: 25%;
+    letter-spacing: 0.02rem;
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+
+#payment i {
+    font-size: 2rem;
+    padding-left: 5%;
+    float: left;
+    color: rgb(110, 107, 107);
+}
+
+#payment h2 {
+    font-size: 1rem;
+    font-weight: 500;
+    padding-top: 2px;
+    flex-direction: column;
+    color: rgb(110, 107, 107);
+}
+
+#payment-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: black;
+}
+
+#payment-content input[type="text"], 
+select, input[type="email"] {
+
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+  
+#payment-content label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+  
+#payment-content .column-2 {
+    flex-basis: 70%;
+    flex-shrink: 0;
+}
+
+#payment-content .column-1 {
+    flex-basis: 30%;
+    max-height: 350px;
+}
+
+#payment-content .box {
+    background-color: rgb(236, 229, 229);
+    padding: 5px 20px 20px 20px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin: 0 25px 50px 25px;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+#payment-content .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#payment-content .column-70 {
+    padding: 0 16px;
+}
+
+#payment-content .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 30px;
+}
+
+#payment-content p {
+    font-size: 0.8rem;
+    letter-spacing: 0.03rem;
+}
+
+#payment-content .placebtn {
+    justify-content: center;
+    text-align: center;
+}
+
+#payment-content .button {
+    display: inline-block;
+    padding: 10px 30px;
+    color: tomato;
+    background-color: transparent;
+    border: 2px solid tomato;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    margin-top: 20px;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+}
+
+#payment-content .button:hover {
+    color: white;
+    background-color: tomato;
+}
+
+#payment-content hr {
+    border: 1px solid lightgrey;
+}
+
+#payment-content span.price {
+    float: right;
+    color: grey;
+}
+
+#payment-content a {
+    color: blue;
+}
+
+#payment-content .column-1 p {
+    margin-top: 2px;
+    padding: 2px;
+    font-size: 1rem;
+}
+
+#payment-content .errors {
+	color: rgb(255, 89, 89);
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+/*End Payment Section*/
+
+/*Footer Section*/
+#footer {
+    background-image: url(../image/register.jpg);
+    margin-top: 100px;
+}
+
+#footer .footer {
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+#footer .brand img {
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+#footer h2 {
+    color: white;
+    font-weight: 300;
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#footer .social-icon {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#footer .social-item {
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+}
+
+#footer .social-item img {
+    filter: grayscale(1);
+    transition: 0.3s ease filter;
+}
+
+#footer .social-item:hover img {
+    filter: grayscale(0);
+}
+
+#footer p {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/*End Footer Section*/
+
+/*Media Query Section*/
+@media only screen and (min-width:760px) {
+    #header .brand img {
+        width: 250px; 
+        height: 90px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    #payment h1 {
+        font-size: 2.5rem;
+        padding-top: 30px;
+    }
+
+    #payment .icon {
+        padding-left: 70px;
+        margin-top: 50px;
+    }
+      
+    #payment-content h1 {
+        padding-top: 30px;
+    }
+
+    #payment-content .icon {
+        padding-left: 70px;
+        margin-top: 50px;
+    }
+
+    #payment-content .button {
+        font-size: 1.5rem;
+        padding: 10px 40px;
+    }
+
+    #payment-content .container1 {
+        padding-top: 50px;
+    }
+}
+
+
+@media only screen and (min-width: 1300px) {
+    /*header*/
+    #header .hamburger {
+        height: 60px;
+        width: 60px;
+        display: inline-block;
+        border: 3px solid white;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transform: scale(0.9);
+        margin-right: 10px;
+        z-index: 100;
+    }
+
+    #header .hamburger {
+        display: none;
+    }
+
+    #header .nav-list ul {
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: black;
+    }
+
+    #header .nav-list ul li {
+        display: inline-block;
+    }
+
+    #header .nav-list ul li a {
+        font-size: 1.25rem;
+    }
+
+    #header .nav-list ul a::after {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    #payment-content .container1 {
+      flex-direction: column;
+      padding: 20px 20px 20px 20px;
+    }
+  
+    #payment-content .box {
+      margin: 0 0 2rem;
+    }
+
+    #payment-content .column-30 {
+        margin-bottom: 20px;
+    }
+  }
+  /*End Media Query Section*/

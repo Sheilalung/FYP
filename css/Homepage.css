@@ -1,0 +1,740 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*Header Section*/
+#header {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%; /* */
+    height: auto;
+}
+
+#header .header {
+    min-height: 0vh;
+    background-color: black  ;
+}
+
+#header .brand img {
+    width: 265px;
+    height: 65px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+#header .header .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+#header .nav-list ul {
+    list-style: none;
+    position: absolute;
+    background-color: black;
+    width: 100%; /* */
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: 0.6s ease left;
+}
+
+#header .nav-list ul.active {
+    left: 0;
+}
+
+#header .nav-list ul a {
+    font-size: 2.3rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    padding: 20px;
+    display: block;
+}
+
+#header .nav-list ul a::after {
+    content: attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: rgba(255, 99, 71, 0.226);
+    font-size: 10rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: 0.3s ease letter-spacing;
+    text-align: center;
+}
+
+#header .nav-list ul li:hover a::after {
+    transform: translate(-50%, -50%) scale(1);
+    letter-spacing: initial;
+}
+
+#header .nav-list ul li:hover a {
+    color: tomato;
+}
+
+#header .hamburger {
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: scale(0.8);
+    margin-right: 10px;
+    z-index: 100;
+}
+
+#header .hamburger .bar {
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: white;
+    z-index: -1;
+}
+
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: 0.3s ease;
+    transition-property: top, bottom;
+}
+
+#header .hamburger .bar::after {
+    top: 8px;
+}
+
+#header .hamburger .bar::before {
+    bottom: 8px;
+}
+
+#header .hamburger.active .bar::before {
+    bottom: 0;
+}
+
+#header .hamburger.active .bar::after {
+    top: 0;
+}
+/*End Header Section*/
+
+/*Banner Section*/
+#banner {
+    background-image: url(../user/image/Driving_Car.jpg);
+    background-image: cover;
+    background-position: top center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;
+}
+
+#banner::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+#banner .banner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#banner h1 {
+    display: block;
+    width: fit-content;
+    font-size: 3rem;
+    color: white;
+    position: relative;
+    letter-spacing: 0.5rem;
+}
+
+#banner h1 b{
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+#banner .button1 {
+    display: inline-block;
+    padding: 10px 30px;
+    color: tomato;
+    background-color: transparent;
+    border: 2px solid tomato;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    margin-top: 20px;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+}
+
+#banner .button1:hover {
+    color: white;
+    background-color: tomato;
+}
+/*End banner section*/
+
+/*About us section*/
+#about .about {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+#about .column-left {
+    width: 500px;
+    height: 100px;
+}
+
+#about .column-right {
+    width: 100%;
+}
+
+#about .section-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+#about .section-title span {
+    color: tomato;
+}
+
+#about .column-right p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    line-height: 35px;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+}
+
+#about .button2 {
+    display: inline-block;
+    padding: 10px 30px;
+    color: tomato;
+    background-color: transparent;
+    border: 2px solid tomato;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    margin-top: 20px;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+}
+
+#about .button2:hover {
+    color: white;
+    background-color: tomato;
+}
+
+#about .column-left .about-img {
+    position: relative;
+    margin: 20px;
+}
+
+#about .column-left .about-img::after {
+    content: "";
+    position: absolute;
+    left: -33px;
+    top: 20px;
+    height: 98%;
+    width: 98%;
+    border: 7px solid black;
+    z-index: -1;
+}
+/*End About us section*/
+
+/*Services*/
+#services .services {
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 200px 0;
+}
+
+#services .section-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#services .section-title span {
+    color: tomato;
+}
+
+#services .service-top p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+    line-height: 35px;
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+#services .service-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+#services .service-item {
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    background-image: url(../user/image/typing.jpg);
+    background-size: cover;
+    margin: 20px 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+#services .service-item h2 {
+    color: tomato;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#services .service-item p a {
+    color: white;
+    text-align: left;
+    line-height: 1.8rem;
+    word-spacing: 0.2rem;
+    text-decoration: none;
+}
+
+#services .service-item p a:hover {
+    text-decoration: none;
+    color: tomato;
+    transition: 0.3s ease;
+}
+
+#services .service-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+#services .service-bottom .icon {
+    height: 80px;
+}
+
+#services .service-bottom .icon img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/*End services*/
+
+/*Register Section*/
+#register {
+    background-image: url(../user/image/register.jpg);
+    background-image: cover;
+    background-position: top center;
+    background-size: cover;
+    position: relative;
+    height: 230px;
+    z-index: 1;
+    margin-top: -100px;
+}
+
+#register::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+#register .register {
+    min-height: 200px;
+    flex-direction: column;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#register p {
+    width: fit-content;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+}
+
+#register .button3 {
+    display: inline-block;
+    padding: 10px 30px;
+    color: tomato;
+    background-color: transparent;
+    border: 2px solid tomato;
+    font-size: 1rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    margin-top: 20px;
+    transition: 0.3s ease;
+    transition-property: background-color, color;
+}
+
+#register .button3:hover {
+    color: white;
+    background-color: tomato;
+}
+/*End Register Section*/
+
+/*Contact Section*/
+#contact {
+    margin-top: 100px;
+}
+
+#contact .section-title {
+    font-size: 3rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+#contact .section-title span {
+    color: tomato;
+}
+
+#contact .contact {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#contact .contact-item {
+    width: 400px;
+}
+
+#contact .contact-section {
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 2px 15px 0px tomato;
+    transition: 0.3s ease box-shadow;
+}
+
+#contact .contact-section:hover {
+    box-shadow: 0px 2px 5px 0px tomato;
+}
+
+#contact .contact-icon {
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#contact .contact-info h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#contact .contact-info h2 {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 200;
+}
+
+/*End Contact Section*/
+
+/*Footer Section*/
+#footer {
+    background-image: url(../user/image/register.jpg);
+    margin-top: 100px;
+}
+
+#footer .footer {
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+#footer .brand img {
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+#footer h2 {
+    color: white;
+    font-weight: 300;
+    font-size: 1.3rem;
+    letter-spacing: 0.05rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#footer .social-icon {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#footer .social-item {
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+}
+
+#footer .social-item img {
+    filter: grayscale(1);
+    transition: 0.3s ease filter;
+}
+
+#footer .social-item:hover img {
+    filter: grayscale(0);
+}
+
+#footer p {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/*End Footer Section*/
+
+/*Media Query Section*/
+@media only screen and (min-width:760px) {
+    #banner .button1 {
+        font-size: 2rem;
+        padding: 10px 40px;
+    }
+
+    #about .button2 {
+        font-size: 2rem;
+        padding: 10px 40px;
+    }
+
+    #register .button3 {
+        font-size: 2rem;
+        padding: 10px 40px;
+    }
+
+    #about .section-title {
+        font-size: 4rem;
+    }
+
+    #services .section-title {
+        font-size: 4rem;
+    }
+
+    #banner h1 {
+        font-size: 4rem;
+    }
+
+    #banner h1 b {
+        font-size: 5rem;
+    }
+
+    #about .column-left {
+        width: 700px;
+    }
+
+    #contact .section-title {
+        font-size: 4rem;
+        margin-bottom: 100px;
+    }
+
+    #contact .contact {
+        flex-direction: column;
+        padding: 100px 0;
+        align-items: center;
+        justify-content: center;
+        min-height: 20vh;
+    }
+
+    #contact .contact-item {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    #contact .contact-section {
+        width: 30%;
+        margin: 0;
+        flex-direction: row;
+    }
+
+    #contact .contact-section .contact-icon {
+        height: 100px;
+        width: 100px;
+    }
+
+    #contact .contact-section .contact-icon img {
+        object-fit: contain;
+    }
+
+    #contact .contact-section .contact-info {
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    #contact .contact-info h1 {
+        font-size: 2.5rem;
+    }
+
+    #contact .contact-info h2 {
+        font-size: 1.5rem;
+        word-wrap: break-word;
+        width: 200px;
+    }
+    
+    #header .brand img {
+        width: 250px; 
+        height: 90px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+}
+/*End Media Query Section*/
+
+@media only screen and (min-width: 1300px) {
+    /*header*/
+    #header .hamburger {
+        height: 60px;
+        width: 60px;
+        display: inline-block;
+        border: 3px solid white;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transform: scale(0.9);
+        margin-right: 10px;
+        z-index: 100;
+    }
+
+    #header .hamburger {
+        display: none;
+    }
+
+    #header .nav-list ul {
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: black;
+    }
+
+    #header .nav-list ul li {
+        display: inline-block;
+    }
+
+    #header .nav-list ul li a {
+        font-size: 1.25rem;
+    }
+
+    #header .nav-list ul a::after {
+        display: none;
+    }
+}
