@@ -91,7 +91,7 @@ if(isset($_POST['submit'])) {
 ?>
 
 <title>Sign Up</title>
-<link rel="stylesheet" href="./css/Loginpage.css">
+<link rel="stylesheet" href="./css/login&psw.css">
 </head>
 <html>
     <body>

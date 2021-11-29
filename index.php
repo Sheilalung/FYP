@@ -113,7 +113,7 @@ include("header.php")
             <div>
             <p>Still waiting? Click the button below and choose the 
             Best Driving Institute</p>
-            <a href="Login.php" type="button" class="button3">Click for more</a>
+            <a href="usersignup.php" type="button" class="button3">Click for more</a>
             </div>
         </div>
     </section>

@@ -20,8 +20,8 @@ if(isset($_POST['submit'])) {
     $user_id = $_SESSION['user_id'];
     $user_dri = mysqli_real_escape_string($conn, $_POST['user_dri']);
     $user_packages = mysqli_real_escape_string($conn, $_POST['user_packages']);
-    $instructor = mysqli_real_escape_string($conn, $_POST['instructor']);
-    $transportation_service = mysqli_real_escape_string($conn, $_POST['transportation_service']);
+    //$instructor = mysqli_real_escape_string($conn, $_POST['instructor']);
+    //$transportation_service = mysqli_real_escape_string($conn, $_POST['transportation_service']);
 
     //check driving institute
     if(empty($_POST['user_dri'])) {
@@ -51,7 +51,7 @@ if(isset($_POST['submit'])) {
         $transportation_service = $_POST['transportation_service'];
     }
 
-    print_r($errors);
+    //print_r($errors);
     if (!array_filter($errors)) {
 
         $sql = "UPDATE `user` SET `user_dri` = '$user_dri', `user_packages` = '$user_packages', `instructor` = '$instructor', `transportation_service` = '$transportation_service' WHERE `user` . `user_id` = '$user_id'";
